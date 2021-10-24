@@ -4,10 +4,14 @@ import { AppService } from './app.service';
 import { ContactModule } from './contact/contact.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { EmployeeModule } from './employee/employee.module';
+import { InformationModule } from './information/information.module';
+import { CertificationModule } from './certification/certification.module';
+import { ClientModule } from './client/client.module';
+import { NewModule } from './new/new.module';
 
 @Module({
   imports: [
-    ContactModule,
     MongooseModule.forRootAsync({
       imports: [ConfigModule.forRoot({ isGlobal: true })],
       useFactory: async (configService: ConfigService) => ({
@@ -17,6 +21,12 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       }),
       inject: [ConfigService],
     }),
+    ContactModule,
+    EmployeeModule,
+    InformationModule,
+    CertificationModule,
+    ClientModule,
+    NewModule,
   ],
   controllers: [AppController],
   providers: [AppService],
