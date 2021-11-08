@@ -13,10 +13,10 @@ export class CreateCertificateDTO {
   @IsString()
   @MaxLength(45, {
     message: 'Ingreso de datos incorrecto ',
-  }) 
+  })
   @IsNotEmpty()
   @ApiProperty()
-  readonly date: string;
+  readonly date: Date;
 
   @IsString()
   @MaxLength(45, {
