@@ -16,6 +16,8 @@ import { ExamModule } from './exam/exam.module';
 import { BatteryModule } from './battery/battery.module';
 import { PhysiologicalModule } from './physiological/physiological.module';
 import { ExamineeModule } from './examinee/examinee.module';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -42,6 +44,8 @@ import { ExamineeModule } from './examinee/examinee.module';
     BatteryModule,
     PhysiologicalModule,
     ExamineeModule,
+    UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

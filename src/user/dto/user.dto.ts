@@ -1,14 +1,14 @@
 import { IsString, IsNotEmpty, MaxLength } from 'class-validator';
 import { PartialType, ApiProperty } from '@nestjs/swagger';
 
-export class CreateNewDTO {
+export class CreateUserDTO {
   @IsString()
   @MaxLength(60, {
     message: 'input incorrecto ',
   })
   @IsNotEmpty()
   @ApiProperty()
-  readonly title: string;
+  readonly name: string;
 
   @IsString()
   @MaxLength(60, {
@@ -16,15 +16,7 @@ export class CreateNewDTO {
   })
   @IsNotEmpty()
   @ApiProperty()
-  readonly lead: string;
-
-  @IsString()
-  @MaxLength(500, {
-    message: 'input incorrecto ',
-  })
-  @IsNotEmpty()
-  @ApiProperty()
-  readonly content: string;
+  readonly mail: string;
 
   @IsString()
   @MaxLength(60, {
@@ -32,7 +24,7 @@ export class CreateNewDTO {
   })
   @IsNotEmpty()
   @ApiProperty()
-  readonly image: string;
+  readonly password: string;
 }
 
-export class UpdateNewDTO extends PartialType(CreateNewDTO) {}
+export class UpdateUserDTO extends PartialType(CreateUserDTO) {}
