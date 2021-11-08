@@ -9,12 +9,20 @@ import { InformationModule } from './information/information.module';
 import { CertificationModule } from './certification/certification.module';
 import { ClientModule } from './client/client.module';
 import { NewModule } from './new/new.module';
+import { CompanyModule } from './company/company.module';
+import { CertificateModule } from './certificate/certificate.module';
+import { ResultsModule } from './results/results.module';
+import { ExamModule } from './exam/exam.module';
+import { BatteryModule } from './battery/battery.module';
+import { PhysiologicalModule } from './physiological/physiological.module';
+import { ExamineeModule } from './examinee/examinee.module';
 
 @Module({
   imports: [
     MongooseModule.forRootAsync({
       imports: [ConfigModule.forRoot({ isGlobal: true })],
       useFactory: async (configService: ConfigService) => ({
+        //uri: configService.get<string>('mongodb+srv://felipe:59DGPzjEiIajzXAI@crisal.tsqq0.mongodb.net/test'),
         uri: configService.get<string>('MONGO_URI'),
         useUnifiedTopology: true,
         useNewUrlParser: true,
@@ -27,6 +35,13 @@ import { NewModule } from './new/new.module';
     CertificationModule,
     ClientModule,
     NewModule,
+    CompanyModule,
+    CertificateModule,
+    ResultsModule,
+    ExamModule,
+    BatteryModule,
+    PhysiologicalModule,
+    ExamineeModule,
   ],
   controllers: [AppController],
   providers: [AppService],
