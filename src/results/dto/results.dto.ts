@@ -8,7 +8,21 @@ export class CreateResultsDTO {
   })
   @IsNotEmpty()
   @ApiProperty()
-  readonly status: string;
+  readonly exam: string;
+
+  @IsString()
+  @MaxLength(45, {
+    message: 'Ingreso de datos incorrecto ',
+  })
+  @ApiProperty()
+  readonly laboratory: string;
+
+  @IsString()
+  @MaxLength(45, {
+    message: 'Ingreso de datos incorrecto ',
+  })
+  @ApiProperty()
+  readonly measurementUnit: string;
 
   @IsString()
   @MaxLength(45, {
@@ -16,12 +30,18 @@ export class CreateResultsDTO {
   })
   @IsNotEmpty()
   @ApiProperty()
+  readonly status: string;
+
+  @IsString()
+  @MaxLength(45, {
+    message: 'Ingreso de datos incorrecto ',
+  })
+  @ApiProperty()
   readonly remark: string;
 
-  @IsNumber()  
-  @IsNotEmpty()
+  @IsNumber()
   @ApiProperty()
-  readonly result: number;  
+  readonly result: number;
 }
 
 export class UpdateResultsDTO extends PartialType(CreateResultsDTO) {}
