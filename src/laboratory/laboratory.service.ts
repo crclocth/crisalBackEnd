@@ -7,7 +7,7 @@ import { Laboratory } from './model/laboratory.model';
 @Injectable()
 export class LaboratoryService {
   constructor(
-    @InjectModel('Information')
+    @InjectModel('Laboratory')
     private readonly laboratoryModel: Model<Laboratory>,
   ) {}
 
