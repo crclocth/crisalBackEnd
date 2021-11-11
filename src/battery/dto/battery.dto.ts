@@ -16,7 +16,13 @@ export class CreateBatteryDTO {
   })
   @IsNotEmpty()
   @ApiProperty()
-  readonly description: string;  
+  readonly description: string;
+
+  @ApiProperty()
+  readonly generalExams: string[];
+
+  @ApiProperty()
+  readonly labExams: string[];
 }
 
 export class UpdateBatteryDTO extends PartialType(CreateBatteryDTO) {}

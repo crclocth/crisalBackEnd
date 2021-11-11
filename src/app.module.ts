@@ -18,6 +18,7 @@ import { PhysiologicalModule } from './physiological/physiological.module';
 import { ExamineeModule } from './examinee/examinee.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
+import { LaboratoryModule } from './laboratory/laboratory.module';
 
 @Module({
   imports: [
@@ -46,6 +47,7 @@ import { AuthModule } from './auth/auth.module';
     ExamineeModule,
     UserModule,
     AuthModule,
+    LaboratoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

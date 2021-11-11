@@ -22,7 +22,6 @@ export class CreateExamDTO {
   @MaxLength(45, {
     message: 'Ingreso de datos incorrecto ',
   })
-  @IsNotEmpty()
   @ApiProperty()
   readonly laboratory: string;
 
@@ -30,7 +29,6 @@ export class CreateExamDTO {
   @MaxLength(10, {
     message: 'Ingreso de datos incorrecto ',
   })
-  @IsNotEmpty()
   @ApiProperty()
   readonly measurementUnit: string;
 }
