@@ -1,21 +1,21 @@
 import {
-    Body,
-    Controller,
-    Delete,
-    Get,
-    HttpStatus,
-    NotFoundException,
-    Param,
-    Patch,
-    Post,
-    Res,
-  } from '@nestjs/common';
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpStatus,
+  NotFoundException,
+  Param,
+  Patch,
+  Post,
+  Res,
+} from '@nestjs/common';
 import { ExamService } from './exam.service';
 import { CreateExamDTO, UpdateExamDTO } from './dto/exam.dto';
 
 @Controller('exam')
 export class ExamController {
-    constructor(private examService: ExamService) {}
+  constructor(private examService: ExamService) {}
 
   @Post()
   async createExam(@Res() res, @Body() createExamDTO: CreateExamDTO) {
@@ -26,9 +26,18 @@ export class ExamController {
     });
   }
 
-  @Get()
-  async getExams(@Res() res) {
-    const exam = await this.examService.getExams();
+  @Get('/:type')
+  async getExams(@Res() res, @Param('type') type) {
+    let exam = [];
+    if (type === 'all') {
+      exam = await this.examService.getExams();
+    }
+    if (type === 'General') {
+      exam = await this.examService.getExamsGeneral();
+    }
+    if (type === 'Laboratorio') {
+      exam = await this.examService.getExamsLab();
+    }
     return res.status(HttpStatus.OK).json(exam);
   }
 
