@@ -10,8 +10,8 @@ export interface Certificate extends Document {
   readonly examinee: Examinee;
   readonly company: Company;
   readonly physiological: Physiological;
-  readonly generalResults: Results[];
-  readonly labResults: Results[];
+  readonly generalResults?: Results[];
+  readonly labResults?: Results[];
   readonly conclusion: string;
   readonly suggestions: string;
   readonly validity: string;

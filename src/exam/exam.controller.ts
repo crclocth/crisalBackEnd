@@ -26,7 +26,7 @@ export class ExamController {
     });
   }
 
-  @Get('/:type')
+  @Get('tipo/:type')
   async getExams(@Res() res, @Param('type') type) {
     let exam = [];
     if (type === 'all') {

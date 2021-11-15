@@ -11,8 +11,8 @@ export const certificateSchema = new Schema(
     doctor: { type: String, required: true },
     company: { type: Object, required: true },
     examinee: { type: Object, required: true },
-    generalResults: { type: Array, required: true },
-    labResults: { type: Array, required: true },
+    generalResults: { type: Array, required: false },
+    labResults: { type: Array, required: false },
     physiological: { type: Object, required: true },
 
     /* company: {
