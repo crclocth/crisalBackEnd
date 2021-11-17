@@ -1,3 +1,4 @@
+import { SendGridService } from '@anchan828/nest-sendgrid';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -8,10 +9,30 @@ import { Contact } from './models/contact.model';
 export class ContactService {
   constructor(
     @InjectModel('Contact') private readonly contactModel: Model<Contact>,
+    private readonly sendGrid: SendGridService,
   ) {}
 
   async createContact(createContactDTO: CreateContactDTO): Promise<Contact> {
     const newContact = new this.contactModel(createContactDTO);
+    await this.sendGrid.send({
+      to: 'crirev@gmail.com',
+      from: 'crirev@gmail.com',
+      cc: 'crclocth@gmail.com',
+      subject: newContact.subject,
+      text: newContact.message,
+      html: `
+        <html>
+          <head>
+            <title></title>
+          </head>
+          <body>
+            <div style="margin:20px">NOMBRE: ${newContact.name}</div>
+            <div style="margin:20px">CORREO: ${newContact.email}</div>
+            <div style="margin:20px">MENSAJE: ${newContact.message}</div>
+          </body>
+        </html>,
+    `,
+    });
     return newContact.save();
   }
 
