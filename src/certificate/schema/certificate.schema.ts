@@ -8,7 +8,7 @@ export const certificateSchema = new Schema(
     suggestions: { type: String, required: true },
     validity: { type: String, required: true },
     validityDate: { type: String, required: true },
-    doctor: { type: String, required: true },
+    doctor: { type: Object, required: true },
     company: { type: Object, required: true },
     examinee: { type: Object, required: true },
     generalResults: { type: Array, required: false },
