@@ -4,6 +4,7 @@ import { Company } from 'src/company/model/company.model';
 import { Examinee } from 'src/examinee/model/examinee.model';
 import { Physiological } from 'src/physiological/model/physiological.model';
 import { Results } from 'src/results/model/results.model';
+import { Doctor } from 'src/doctor/model/doctor.model';
 
 export class CreateCertificateDTO {
   @IsString()
@@ -60,7 +61,7 @@ export class CreateCertificateDTO {
   })
   @IsNotEmpty()
   @ApiProperty()
-  readonly doctor: string;
+  readonly doctor: Doctor;
 
   @IsNotEmpty()
   @ApiProperty()

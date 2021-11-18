@@ -1,5 +1,6 @@
 import { Document } from 'mongoose';
 import { Company } from 'src/company/model/company.model';
+import { Doctor } from 'src/doctor/model/doctor.model';
 import { Examinee } from 'src/examinee/model/examinee.model';
 import { Physiological } from 'src/physiological/model/physiological.model';
 import { Results } from 'src/results/model/results.model';
@@ -16,5 +17,5 @@ export interface Certificate extends Document {
   readonly suggestions: string;
   readonly validity: string;
   readonly validityDate: string;
-  readonly doctor: string;
+  readonly doctor: Doctor;
 }

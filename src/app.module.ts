@@ -22,6 +22,7 @@ import { LaboratoryModule } from './laboratory/laboratory.module';
 import { SendGridModule } from '@anchan828/nest-sendgrid';
 import { AppointmentModule } from './appointment/appointment.module';
 import { AppointCompanyModule } from './appoint-company/appoint-company.module';
+import { DoctorModule } from './doctor/doctor.module';
 
 @Module({
   imports: [
@@ -56,6 +57,7 @@ import { AppointCompanyModule } from './appoint-company/appoint-company.module';
     LaboratoryModule,
     AppointmentModule,
     AppointCompanyModule,
+    DoctorModule,
   ],
   controllers: [AppController],
   providers: [AppService],
