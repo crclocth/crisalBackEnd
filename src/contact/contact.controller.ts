@@ -10,7 +10,6 @@ import {
   Post,
   Res,
 } from '@nestjs/common';
-
 import { ContactService } from './contact.service';
 import { CreateContactDTO, UpdateContactDTO } from './dto/contact.dto';
 

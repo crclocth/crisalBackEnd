@@ -6,6 +6,7 @@ export const batterySchema = new Schema(
     description: { type: String, required: true },
     generalExams: { type: Array, required: false },
     labExams: { type: Array, required: false },
+    image: { type: String, required: true },
   },
   { timestamps: true },
 );

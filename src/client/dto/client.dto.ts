@@ -11,9 +11,6 @@ export class CreateClientDTO {
   readonly title: string;
 
   @IsString()
-  @MaxLength(500, {
-    message: 'input incorrecto ',
-  })
   @IsNotEmpty()
   @ApiProperty()
   readonly image: string;

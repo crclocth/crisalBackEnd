@@ -1,21 +1,21 @@
 import {
-    Body,
-    Controller,
-    Delete,
-    Get,
-    HttpStatus,
-    NotFoundException,
-    Param,
-    Patch,
-    Post,
-    Res,
-  } from '@nestjs/common';
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpStatus,
+  NotFoundException,
+  Param,
+  Patch,
+  Post,
+  Res,
+} from '@nestjs/common';
 import { BatteryService } from './battery.service';
 import { CreateBatteryDTO, UpdateBatteryDTO } from './dto/battery.dto';
 
 @Controller('battery')
 export class BatteryController {
-    constructor(private batteryService: BatteryService) {}
+  constructor(private batteryService: BatteryService) {}
 
   @Post()
   async createBattery(@Res() res, @Body() createBatteryDTO: CreateBatteryDTO) {
@@ -55,7 +55,10 @@ export class BatteryController {
     @Body() updateBatteryDTO: UpdateBatteryDTO,
     @Param('id') id,
   ) {
-    const battery = await this.batteryService.updateBattery(id, updateBatteryDTO);
+    const battery = await this.batteryService.updateBattery(
+      id,
+      updateBatteryDTO,
+    );
     if (!battery) throw new NotFoundException('Product does not exist!');
     return res.status(HttpStatus.OK).json({
       message: 'Battery Updated Successfully',

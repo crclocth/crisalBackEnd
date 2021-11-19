@@ -19,6 +19,10 @@ import { ExamineeModule } from './examinee/examinee.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { LaboratoryModule } from './laboratory/laboratory.module';
+import { SendGridModule } from '@anchan828/nest-sendgrid';
+import { AppointmentModule } from './appointment/appointment.module';
+import { AppointCompanyModule } from './appoint-company/appoint-company.module';
+import { DoctorModule } from './doctor/doctor.module';
 
 @Module({
   imports: [
@@ -31,6 +35,9 @@ import { LaboratoryModule } from './laboratory/laboratory.module';
         useNewUrlParser: true,
       }),
       inject: [ConfigService],
+    }),
+    SendGridModule.forRoot({
+      apikey: process.env.SENDGRID_API_KEY,
     }),
     ContactModule,
     EmployeeModule,
@@ -48,6 +55,9 @@ import { LaboratoryModule } from './laboratory/laboratory.module';
     UserModule,
     AuthModule,
     LaboratoryModule,
+    AppointmentModule,
+    AppointCompanyModule,
+    DoctorModule,
   ],
   controllers: [AppController],
   providers: [AppService],

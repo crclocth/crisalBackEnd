@@ -8,11 +8,11 @@ export const certificateSchema = new Schema(
     suggestions: { type: String, required: true },
     validity: { type: String, required: true },
     validityDate: { type: String, required: true },
-    doctor: { type: String, required: true },
+    doctor: { type: Object, required: true },
     company: { type: Object, required: true },
     examinee: { type: Object, required: true },
-    generalResults: { type: Array, required: true },
-    labResults: { type: Array, required: true },
+    generalResults: { type: Array, required: false },
+    labResults: { type: Array, required: false },
     physiological: { type: Object, required: true },
 
     /* company: {
