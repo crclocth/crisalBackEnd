@@ -3,7 +3,7 @@ import { PartialType, ApiProperty } from '@nestjs/swagger';
 
 export class CreateNewDTO {
   @IsString()
-  @MaxLength(60, {
+  @MaxLength(100, {
     message: 'input incorrecto ',
   })
   @IsNotEmpty()
@@ -11,7 +11,7 @@ export class CreateNewDTO {
   readonly title: string;
 
   @IsString()
-  @MaxLength(60, {
+  @MaxLength(250, {
     message: 'input incorrecto ',
   })
   @IsNotEmpty()
@@ -19,7 +19,7 @@ export class CreateNewDTO {
   readonly lead: string;
 
   @IsString()
-  @MaxLength(500, {
+  @MaxLength(2000, {
     message: 'input incorrecto ',
   })
   @IsNotEmpty()
@@ -27,9 +27,6 @@ export class CreateNewDTO {
   readonly content: string;
 
   @IsString()
-  @MaxLength(60, {
-    message: 'input incorrecto ',
-  })
   @IsNotEmpty()
   @ApiProperty()
   readonly image: string;

@@ -7,5 +7,6 @@ export interface Appointment extends Document {
   readonly battery: string;
   readonly date?: Date;
   readonly age: number;
+  readonly isConfirmed: boolean;
   readonly jobTitle?: string;
 }

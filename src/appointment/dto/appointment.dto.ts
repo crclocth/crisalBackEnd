@@ -50,6 +50,10 @@ export class CreateAppointmentDTO {
   @IsNotEmpty()
   @ApiProperty()
   readonly jobTitle: string;
+
+  @IsNotEmpty()
+  @ApiProperty()
+  readonly isConfirmed: boolean;
 }
 
 export class UpdateAppointmentDTO extends PartialType(CreateAppointmentDTO) {}

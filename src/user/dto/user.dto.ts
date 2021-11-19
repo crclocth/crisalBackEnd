@@ -3,7 +3,7 @@ import { PartialType, ApiProperty } from '@nestjs/swagger';
 
 export class CreateUserDTO {
   @IsString()
-  @MaxLength(60, {
+  @MaxLength(120, {
     message: 'input incorrecto ',
   })
   @IsNotEmpty()

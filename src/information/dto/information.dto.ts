@@ -3,7 +3,7 @@ import { PartialType, ApiProperty } from '@nestjs/swagger';
 
 export class CreateInformationDTO {
   @IsNumber()
-  @MaxLength(9, {
+  @MaxLength(15, {
     message: 'input incorrecto ',
   })
   @IsNotEmpty()
@@ -11,7 +11,7 @@ export class CreateInformationDTO {
   readonly telephone1: number;
 
   @IsNumber()
-  @MaxLength(9, {
+  @MaxLength(15, {
     message: 'input incorrecto ',
   })
   @IsNotEmpty()

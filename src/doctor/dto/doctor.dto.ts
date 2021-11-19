@@ -3,7 +3,7 @@ import { PartialType, ApiProperty } from '@nestjs/swagger';
 
 export class CreateDoctorDTO {
   @IsString()
-  @MaxLength(12, {
+  @MaxLength(120, {
     message: 'Ingreso de datos incorrecto ',
   })
   @IsNotEmpty()
@@ -11,7 +11,7 @@ export class CreateDoctorDTO {
   readonly name: string;
 
   @IsString()
-  @MaxLength(45, {
+  @MaxLength(10, {
     message: 'Ingreso de datos incorrecto ',
   })
   @IsNotEmpty()
@@ -19,7 +19,7 @@ export class CreateDoctorDTO {
   readonly rut: string;
 
   @IsString()
-  @MaxLength(45, {
+  @MaxLength(80, {
     message: 'Ingreso de datos incorrecto ',
   })
   @IsNotEmpty()
@@ -27,9 +27,6 @@ export class CreateDoctorDTO {
   readonly title: string;
 
   @IsString()
-  @MaxLength(45, {
-    message: 'Ingreso de datos incorrecto ',
-  })
   @IsNotEmpty()
   @ApiProperty()
   readonly image: string;

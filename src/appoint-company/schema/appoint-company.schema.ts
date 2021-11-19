@@ -7,6 +7,7 @@ export const appointCompanySchema = new Schema(
     faena: { type: String, required: true },
     email: { type: String, required: true },
     date: { type: Date, required: true },
+    isConfirmed: { type: Boolean, required: true },
     examinees: { type: Array, required: true },
   },
   { timestamps: true },

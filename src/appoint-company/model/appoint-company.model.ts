@@ -7,5 +7,6 @@ export interface AppointCompany extends Document {
   readonly faena: string;
   readonly email: string;
   readonly date: Date;
+  readonly isConfirmed: boolean;
   readonly examinees: Appointment[];
 }
