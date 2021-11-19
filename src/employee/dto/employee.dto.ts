@@ -11,7 +11,7 @@ export class CreateEmployeeDTO {
   readonly name: string;
 
   @IsString()
-  @MaxLength(45, {
+  @MaxLength(80, {
     message: 'input incorrecto ',
   })
   @IsNotEmpty()
@@ -19,15 +19,12 @@ export class CreateEmployeeDTO {
   readonly profession: string;
 
   @IsString()
-  @MaxLength(800, {
-    message: 'input incorrecto ',
-  })
   @IsNotEmpty()
   @ApiProperty()
   readonly image: string;
 
   @IsString()
-  @MaxLength(255, {
+  @MaxLength(500, {
     message: 'input incorrecto ',
   })
   @IsNotEmpty()

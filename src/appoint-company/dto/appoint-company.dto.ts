@@ -45,6 +45,10 @@ export class CreateAppointCompanyDTO {
 
   @ApiProperty()
   readonly examinees: Appointment[];
+
+  @IsNotEmpty()
+  @ApiProperty()
+  readonly isConfirmed: boolean;
 }
 
 export class UpdateAppointCompanyDTO extends PartialType(

@@ -3,7 +3,7 @@ import { PartialType, ApiProperty } from '@nestjs/swagger';
 
 export class CreateBatteryDTO {
   @IsString()
-  @MaxLength(45, {
+  @MaxLength(120, {
     message: 'Ingreso de datos incorrecto ',
   })
   @IsNotEmpty()
@@ -11,12 +11,17 @@ export class CreateBatteryDTO {
   readonly name: string;
 
   @IsString()
-  @MaxLength(255, {
+  @MaxLength(400, {
     message: 'Ingreso de datos incorrecto ',
   })
   @IsNotEmpty()
   @ApiProperty()
   readonly description: string;
+
+  @IsString()
+  @IsNotEmpty()
+  @ApiProperty()
+  readonly image: string;
 
   @ApiProperty()
   readonly generalExams: string[];

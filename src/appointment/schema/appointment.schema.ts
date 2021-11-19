@@ -8,6 +8,7 @@ export const appointmentSchema = new Schema(
     battery: { type: String, required: true },
     date: { type: Date, required: false },
     age: { type: Number, required: true },
+    isConfirmed: { type: Boolean, required: true },
     jobTitle: { type: String, required: false },
   },
   { timestamps: true },

@@ -5,4 +5,5 @@ export interface Battery extends Document {
   readonly description: string;
   readonly generalExams: string[];
   readonly labExams: string[];
+  readonly image: string;
 }

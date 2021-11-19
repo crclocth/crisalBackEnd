@@ -3,7 +3,7 @@ import { PartialType, ApiProperty } from '@nestjs/swagger';
 
 export class CreateExamDTO {
   @IsString()
-  @MaxLength(45, {
+  @MaxLength(120, {
     message: 'Ingreso de datos incorrecto ',
   })
   @IsNotEmpty()
@@ -11,7 +11,7 @@ export class CreateExamDTO {
   readonly name: string;
 
   @IsString()
-  @MaxLength(45, {
+  @MaxLength(20, {
     message: 'Ingreso de datos incorrecto ',
   })
   @IsNotEmpty()
@@ -19,7 +19,7 @@ export class CreateExamDTO {
   readonly type: string;
 
   @IsString()
-  @MaxLength(45, {
+  @MaxLength(100, {
     message: 'Ingreso de datos incorrecto ',
   })
   @ApiProperty()

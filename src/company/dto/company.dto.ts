@@ -11,7 +11,7 @@ export class CreateCompanyDTO {
   readonly rut: string;
 
   @IsString()
-  @MaxLength(45, {
+  @MaxLength(120, {
     message: 'Ingreso de datos incorrecto ',
   })
   @IsNotEmpty()
@@ -27,7 +27,7 @@ export class CreateCompanyDTO {
   readonly email: string;
 
   @IsString()
-  @MaxLength(45, {
+  @MaxLength(120, {
     message: 'Ingreso de datos incorrecto ',
   })
   @IsNotEmpty()
