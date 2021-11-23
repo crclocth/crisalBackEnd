@@ -75,6 +75,10 @@ export class CreateCertificateDTO {
   @ApiProperty()
   readonly physiological: Physiological;
 
+  @IsNotEmpty()
+  @ApiProperty()
+  readonly serialCode: number;
+
   @ApiProperty()
   readonly generalResults: Results[];
 

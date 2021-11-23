@@ -19,6 +19,14 @@ export class CreateEmployeeDTO {
   readonly profession: string;
 
   @IsString()
+  @MaxLength(10, {
+    message: 'input incorrecto ',
+  })
+  @IsNotEmpty()
+  @ApiProperty()
+  readonly abreprofession: string;
+
+  @IsString()
   @IsNotEmpty()
   @ApiProperty()
   readonly image: string;
