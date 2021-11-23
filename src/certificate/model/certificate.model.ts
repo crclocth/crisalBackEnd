@@ -16,6 +16,7 @@ export interface Certificate extends Document {
   readonly conclusion: string;
   readonly suggestions: string;
   readonly validity: string;
+  readonly serialCode: number;
   readonly validityDate: string;
   readonly doctor: Doctor;
 }
