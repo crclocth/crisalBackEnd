@@ -9,4 +9,5 @@ export interface Information extends Document {
   readonly vision: string;
   readonly mission: string;
   readonly values: string;
+  readonly location: string;
 }

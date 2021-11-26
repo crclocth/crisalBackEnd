@@ -14,7 +14,7 @@ export const certificateSchema = new Schema(
     generalResults: { type: Array, required: false },
     labResults: { type: Array, required: false },
     physiological: { type: Object, required: true },
-    serialCode: { type: Number, required: true },
+    serialCode: { type: Number, required: false },
 
     /* company: {
       type: Schema.Types.ObjectId,
