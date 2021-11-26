@@ -7,13 +7,14 @@ export const certificateSchema = new Schema(
     conclusion: { type: String, required: true },
     suggestions: { type: String, required: true },
     validity: { type: String, required: true },
-    validityDate: { type: String, required: true },
+    validityDate: { type: String, required: false },
     doctor: { type: Object, required: true },
     company: { type: Object, required: true },
     examinee: { type: Object, required: true },
     generalResults: { type: Array, required: false },
     labResults: { type: Array, required: false },
     physiological: { type: Object, required: true },
+    serialCode: { type: Number, required: false },
 
     /* company: {
       type: Schema.Types.ObjectId,

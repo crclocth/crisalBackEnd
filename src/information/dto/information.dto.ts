@@ -65,6 +65,14 @@ export class CreateInformationDTO {
   @IsNotEmpty()
   @ApiProperty()
   readonly values: string;
+
+  @IsString()
+  @MaxLength(1000, {
+    message: 'input incorrecto ',
+  })
+  @IsNotEmpty()
+  @ApiProperty()
+  readonly location: string;
 }
 
 export class UpdateInformationDTO extends PartialType(CreateInformationDTO) {}

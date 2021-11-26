@@ -24,7 +24,7 @@ export class ApiKeyGuard implements CanActivate {
     const authHeader = request.header('Auth');
     const isAuth = authHeader === process.env.IS_PUBLIC_KEY;
     if (!isAuth) {
-      throw new UnauthorizedException('not allow');
+      throw new UnauthorizedException('no esta pasando');
     }
     return isAuth;
   }

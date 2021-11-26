@@ -10,6 +10,7 @@ export const informationSchema = new Schema(
     vision: { type: String, required: true },
     mission: { type: String, required: true },
     values: { type: String, required: true },
+    location: { type: String, required: true },
   },
   { timestamps: true },
 );
